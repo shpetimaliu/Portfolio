@@ -3,22 +3,27 @@ import { MotionConfig, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
+import { HiMenuAlt4 } from "react-icons";
 import Container from "./Container";
 import Logo from "./Logo";
 
 const Headeri = ({
   panelId,
   invert = false,
+  icon: Icon,
   expanded,
   onToggle,
   toggleRef,
 }) => {
   return (
     <Container>
-      {/* Logo/Emri */}
-      <Link href={"/"} aria-label="Home">
-        <Logo invert={invert}>Shpetim Aliu</Logo>
-      </Link>
+      <div className="flex items-center justify-between">
+        {/* Logo/Emri */}
+        <Link href={"/"} aria-label="Home">
+          <Logo invert={invert}>Shpetim Aliu</Logo>
+        </Link>
+        <div className="flex item-center gap-x-8"></div>
+      </div>
     </Container>
   );
 };
@@ -53,7 +58,18 @@ const RootLayoutInner = ({ children }) => {
           inert={expanded ? "" : undefined}
         >
           {/* Headeri */}
-          <Headeri />
+          <Headeri
+            panelId={panelId}
+            icon={HiMenuAlt4}
+            toggleRef={openRef}
+            expanded={expanded}
+            onToggle={() => {
+              setExpanded((expanded) => !expanded);
+              window.setTimeout(() => {
+                closeRef.current?.focus({ preventScroll: true });
+              });
+            }}
+          />
         </div>
       </header>
     </MotionConfig>
@@ -62,7 +78,7 @@ const RootLayoutInner = ({ children }) => {
 
 function RootLayout({ children }) {
   const pathName = usePathname();
-  return <RootLayoutInner>{children}</RootLayoutInner>;
+  return <RootLayoutInner key={pathName}>{children}</RootLayoutInner>;
 }
 
 export default RootLayout;
