@@ -1,3 +1,4 @@
+import RootLayout from "@/components/RootLayout";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -8,7 +9,7 @@ export const metadata = {
   description: "MERN Stack developer",
 };
 
-export default function RootLayout({ children }) {
+export default function Layout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
