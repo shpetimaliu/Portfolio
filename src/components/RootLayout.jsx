@@ -164,7 +164,7 @@ const RootLayoutInner = ({ children }) => {
             <Navigation />
             <div className="relative bg-neutral-950 before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-neutral-900">
               <Container>
-                <div>
+                <div className="grid grid-cols-1 gap-y-10 pb-16 pt-10 sm:grid-cols-2 sm:pt-16">
                   <div>
                     <h2 className="font-display font-medium text-base text-white">
                       My Location
@@ -173,6 +173,11 @@ const RootLayoutInner = ({ children }) => {
                       invert
                       className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2"
                     />
+                  </div>
+                  <div className="sm:border-1 sm:border-transparent sm:pl-10">
+                    <h2 className="font-display text-base font-medium text-white">
+                      Connect with me
+                    </h2>
                   </div>
                 </div>
               </Container>
