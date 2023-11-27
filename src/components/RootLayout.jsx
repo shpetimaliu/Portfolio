@@ -9,6 +9,7 @@ import { IoMdClose } from "react-icons/io";
 import Button from "./Button";
 import Container from "./Container";
 import Follow from "./Follow";
+import Footer from "./Footer";
 import Logo from "./Logo";
 import MyLocation from "./MyLocation";
 
@@ -60,7 +61,7 @@ const Header = ({
 
 const NavigationRow = ({ children }) => {
   return (
-    <div className="event:mt-px sm:bg-neutral-950">
+    <div className="even:mt-px sm:bg-neutral-950">
       <Container>
         <div className="grid grid-cols-1 sm:grid-cols-2">{children}</div>
       </Container>
@@ -68,7 +69,7 @@ const NavigationRow = ({ children }) => {
   );
 };
 
-const NavigationItems = ({ href, children }) => {
+const NavigationItem = ({ href, children }) => {
   return (
     <Link
       href={href}
@@ -84,12 +85,12 @@ const Navigation = () => {
   return (
     <nav className="mt-px font-display text-5xl font-medium tracking-tight text-white">
       <NavigationRow>
-        <NavigationItems href={"/work"}>Work</NavigationItems>
-        <NavigationItems href={"/aboutme"}>About Me</NavigationItems>
+        <NavigationItem href="/works">Works</NavigationItem>
+        <NavigationItem href="/about">About Me</NavigationItem>
       </NavigationRow>
       <NavigationRow>
-        <NavigationItems href={"/pens"}>Pens</NavigationItems>
-        <NavigationItems href={"/contact"}>Contact</NavigationItems>
+        <NavigationItem href="/pens">Pens</NavigationItem>
+        <NavigationItem href="/contact">Contact</NavigationItem>
       </NavigationRow>
     </nav>
   );
@@ -187,6 +188,20 @@ const RootLayoutInner = ({ children }) => {
           </motion.div>
         </motion.div>
       </header>
+      <motion.div
+        layout
+        style={{ borderTopLeftRadius: 40, borderTopRightRadius: 40 }}
+        className="relative flex flex-auto overflow-hidden bg-white pt-14"
+      >
+        <motion.div
+          layout
+          className="relative isolate flex w-full flex-col pt-9"
+        >
+          <main className="w-full flex-auto">{children}</main>
+          {/* Footeriiii */}
+          <Footer />
+        </motion.div>
+      </motion.div>
     </MotionConfig>
   );
 };

@@ -2,7 +2,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import { BsFacebook, BsGithub, BsLinkedin, BsTwitterX } from "react-icons/bs";
 
-const socialMedias = [
+export const socialMedias = [
   {
     name: "GitHub",
     href: "https://github.com/shpetimaliu",

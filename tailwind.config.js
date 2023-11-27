@@ -1,18 +1,25 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      borderRadius: {
+        "4xl": "2.5rem",
+      },
+      fontFamily: {
+        sans: ["Okta Medium", ...defaultTheme.fontFamily.sans],
+        display: [
+          ["Okta Medium", ...defaultTheme.fontFamily.sans],
+          { fontVariationSettings: '"width" 125' },
+        ],
       },
     },
   },
   plugins: [],
-}
+};

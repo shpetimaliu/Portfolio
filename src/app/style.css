@@ -1,0 +1,10 @@
+@tailwind base;
+
+@font-face {
+  font-family: "Okta Medium";
+  font-weight: 200 900;
+  font-display: block;
+  font-style: normal;
+  font-stretch: 75% 125%;
+  src: url("../fonts/Okta-Md.otf");
+}

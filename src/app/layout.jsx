@@ -1,8 +1,5 @@
 import RootLayout from "@/components/RootLayout";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Shpetim Aliu",
@@ -11,8 +8,11 @@ export const metadata = {
 
 export default function Layout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html
+      lang="en"
+      className="h-full bg-neutral-950 text-base antialiased text-neutral-100"
+    >
+      <body className="flex min-h-full flex-col">
         <RootLayout>{children}</RootLayout>
       </body>
     </html>
