@@ -4,9 +4,9 @@ export const nav = [
   {
     name: "Work",
     links: [
-      { name: "Amazon Clone", href: "/work/amazonclone" },
-      { name: "Bazar e-commerce", href: "/work/bazar" },
-      { name: "Blog 101", href: "/work/blog101" },
+      { name: "Netflix Clone", href: "/work/netflix" },
+      { name: "Threads Clone", href: "/work/thread" },
+      { name: "NotesApp", href: "/work/notesapp" },
       {
         name: (
           <>

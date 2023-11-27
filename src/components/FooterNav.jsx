@@ -14,7 +14,7 @@ function FooterNav() {
               <ul role="list" className="mt-4 text-sm text-neutral-600">
                 {item.links.map((link) => {
                   return (
-                    <li key={link.title} className="mt-4">
+                    <li key={link.name} className="mt-4">
                       <Link
                         href={link.href}
                         className="transition hover:text-neutral-950"
