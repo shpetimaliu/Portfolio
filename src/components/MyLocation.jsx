@@ -21,7 +21,7 @@ const MyLocation = ({ invert = false, ...props }) => {
   return (
     <ul role="list" {...props}>
       <li>
-        <Location name="KS" invert={invert}>
+        <Location name="Kosovë" invert={invert}>
           Mitrovice,
           <br />
           40000

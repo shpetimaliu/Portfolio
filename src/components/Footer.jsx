@@ -1,6 +1,8 @@
+import Link from "next/link";
 import Container from "./Container";
 import { FadeIn } from "./FadeIn";
 import FooterNav from "./FooterNav";
+import Logo from "./Logo";
 
 const ArrIcon = (props) => {
   return (
@@ -53,9 +55,19 @@ function Footer() {
       <FadeIn>
         <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
           <FooterNav />
-          <div>
+          <div className="flex lg:justify-end">
             <JustContact />
           </div>
+        </div>
+        <div className="mb-20 mt-24 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t border-neutral-950/10 pt-12">
+          <Link href={"/"} aria-label="Home">
+            <Logo className="h-8" fillOnHover>
+              Shpetim Aliu
+            </Logo>
+          </Link>
+          <p className="text-sm text-neutral-700">
+            MERN Stack - Developer {new Date().getFullYear()}
+          </p>
         </div>
       </FadeIn>
     </Container>
