@@ -5,7 +5,9 @@ function Logo({ invert, href, className, children, ...props }) {
   className = clsx(
     className,
     "black",
-    invert ? "text-white hover:text-blue-600" : "text-black hover:text-blue-600"
+    invert
+      ? "text-white hover:text-[#1e293b]"
+      : "text-black hover:text-[#1e293b]"
   );
   const inner = <span className="relative">{children}</span>;
   if (href) {
@@ -15,7 +17,17 @@ function Logo({ invert, href, className, children, ...props }) {
       </Link>
     );
   }
-  return <h2>{inner}</h2>;
+  return (
+    <h2
+      className={clsx(
+        "cursor-pointer text-2xl font-medium duration-300",
+        className
+      )}
+      {...props}
+    >
+      {inner}
+    </h2>
+  );
 }
 
 export default Logo;
