@@ -8,6 +8,7 @@ import { HiMenuAlt4 } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
 import Button from "./Button";
 import Container from "./Container";
+import Follow from "./Follow";
 import Logo from "./Logo";
 import MyLocation from "./MyLocation";
 
@@ -178,6 +179,7 @@ const RootLayoutInner = ({ children }) => {
                     <h2 className="font-display text-base font-medium text-white">
                       Connect with me
                     </h2>
+                    <Follow className="mt-6" invert />
                   </div>
                 </div>
               </Container>
