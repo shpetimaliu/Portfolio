@@ -3,8 +3,27 @@ import Container from "@/components/Container";
 import { FadeIn } from "@/components/FadeIn";
 import Quote from "@/components/Quote";
 import StackTechnology from "@/components/StackTechnology";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [quote, setQuote] = useState("");
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://quotes-github-readme.vercel.app/api"
+        );
+        setQuote(response.data);
+      } catch (error) {
+        console.error("Gabim gjatë thirrjes së API: ", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <main className="text-black">
       <Container className="mt-24 sm:mt-32">
