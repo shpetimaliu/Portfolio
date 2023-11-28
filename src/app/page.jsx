@@ -2,6 +2,7 @@
 import Container from "@/components/Container";
 import { FadeIn } from "@/components/FadeIn";
 import Quote from "@/components/Quote";
+import Services from "@/components/Services";
 import StackTechnology from "@/components/StackTechnology";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -13,9 +14,11 @@ export default function Home() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://quotes-github-readme.vercel.app/api"
+          "https://api.quotable.io/random?tags=technology"
         );
-        setQuote(response.data);
+        setQuote(response.data.content);
+
+        // console.log(response.data.content);
       } catch (error) {
         console.error("Gabim gjatë thirrjes së API: ", error);
       }
@@ -23,7 +26,7 @@ export default function Home() {
 
     fetchData();
   }, []);
-
+  console.log(quote);
   return (
     <main className="text-black">
       <Container className="mt-24 sm:mt-32">
@@ -42,7 +45,8 @@ export default function Home() {
         </FadeIn>
       </Container>
       <StackTechnology />
-      <Quote></Quote>
+      <Quote className="mt-24 sm:mt-32 lg:mt-40" />
+      <Services />
     </main>
   );
 }
