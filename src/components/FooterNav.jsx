@@ -16,6 +16,7 @@ function FooterNav() {
                   return (
                     <li key={link.name} className="mt-4">
                       <Link
+                        target="_blank"
                         href={link.href}
                         className="transition hover:text-neutral-950"
                       >

@@ -1,5 +1,8 @@
+"use client";
 import Container from "@/components/Container";
 import { FadeIn } from "@/components/FadeIn";
+import Quote from "@/components/Quote";
+import StackTechnology from "@/components/StackTechnology";
 
 export default function Home() {
   return (
@@ -19,6 +22,8 @@ export default function Home() {
           </p>
         </FadeIn>
       </Container>
+      <StackTechnology />
+      <Quote></Quote>
     </main>
   );
 }

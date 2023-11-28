@@ -29,10 +29,10 @@ const JustContact = () => {
       </p>
       <div className="relative mt-6">
         <input
-          type="email"
-          placeholder="Email address"
+          type="text"
+          placeholder="Email address or Phone Number"
           autoComplete="email"
-          aria-label="Email address"
+          aria-label="Email address or Phone Number"
           className="block w-full rounded-2xl border border-neutral-300 bg-transparent py-4 pl-6 pr-20 text-base/6 text-neutral-950 ring-4 ring-transparent transition placeholder:text-neutral-500 focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5"
         />
         <div className="absolute inset-y-1 right-1 flex justify-end">
@@ -59,7 +59,7 @@ function Footer() {
             <JustContact />
           </div>
         </div>
-        <div className="mb-20 mt-24 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t border-neutral-950/10 pt-12">
+        <div className="mb-20 mt-24 relative flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t border-neutral-950/10 pt-12">
           <Link href={"/"} aria-label="Home">
             <Logo className="h-8">Shpetim Aliu</Logo>
           </Link>
