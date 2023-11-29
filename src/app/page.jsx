@@ -2,31 +2,10 @@
 import Container from "@/components/Container";
 import { FadeIn } from "@/components/FadeIn";
 import Quote from "@/components/Quote";
-import Services from "@/components/Services";
+import Skills from "@/components/Skills";
 import StackTechnology from "@/components/StackTechnology";
-import axios from "axios";
-import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [quote, setQuote] = useState("");
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          "https://api.quotable.io/random?tags=technology"
-        );
-        setQuote(response.data.content);
-
-        // console.log(response.data.content);
-      } catch (error) {
-        console.error("Gabim gjatë thirrjes së API: ", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-  console.log(quote);
   return (
     <main className="text-black">
       <Container className="mt-24 sm:mt-32">
@@ -46,7 +25,7 @@ export default function Home() {
       </Container>
       <StackTechnology />
       <Quote className="mt-24 sm:mt-32 lg:mt-40" />
-      <Services />
+      <Skills />
     </main>
   );
 }

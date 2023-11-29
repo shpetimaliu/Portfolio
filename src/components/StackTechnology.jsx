@@ -2,12 +2,15 @@ import Image from "next/image";
 import angular from "../images/stack/angular.svg";
 import bootstrap from "../images/stack/bootstrap.svg";
 import cssIcon from "../images/stack/css.svg";
+import ejs from "../images/stack/ejs.svg";
 import express from "../images/stack/express.svg";
 import firebase from "../images/stack/firebase.svg";
+import framermotion from "../images/stack/framermotion.svg";
 import gsapIcon from "../images/stack/gsap.svg";
 import html from "../images/stack/html.svg";
 import javascript from "../images/stack/javascript.svg";
 import mongodbIcon from "../images/stack/mongodb.svg";
+import mustache from "../images/stack/mustache.svg";
 import next from "../images/stack/next.svg";
 import node from "../images/stack/node.svg";
 import react from "../images/stack/react.svg";
@@ -20,9 +23,9 @@ import tailwindIcon from "../images/stack/tailwind.svg";
 import typescriptIcon from "../images/stack/typescript.svg";
 import webflow from "../images/stack/webflow.svg";
 import wordpress from "../images/stack/wordpress.svg";
-
 import Container from "./Container";
 import { FadeIn } from "./FadeIn";
+import { StarsIllustration } from "./Stars";
 
 const TechStacksFront = [
   ["Javascript", javascript],
@@ -33,6 +36,9 @@ const TechStacksFront = [
   ["Angular", angular],
   ["Socket", socket],
   ["gsap", gsapIcon],
+  ["framermotion", framermotion],
+  ["ejs", ejs],
+  ["mustache", mustache],
   ["HTML", html],
   ["CSS", cssIcon],
   ["tailwind", tailwindIcon],
@@ -56,10 +62,15 @@ const WebBuilders = [
 
 function StackTechnology() {
   return (
-    <div className="mt-24 bg-neutral-950 py-20 sm:mt-32 sm:py-32 lg:mt-56">
+    <div className="mt-24 bg-neutral-950 sm:grid-cols-5 py-20 sm:mt-32 sm:py-32 lg:mt-56">
       <Container>
+        <div className="relative">
+          <div className="absolute top-0 left-0 w-full h-full">
+            <StarsIllustration />
+          </div>
+        </div>
         <FadeIn className="flex items-center gap-x-8">
-          <h2 className="text-center font-display text-sm font-bold tracking-wider text-white sm:text-left">
+          <h2 className="text-center font-display text-sm font-bold justify-start tracking-wider text-white sm:text-left">
             Some technology stack who I know and I used in FrontEnd
           </h2>
           <div className="h-px flex-auto bg-neutral-800" />

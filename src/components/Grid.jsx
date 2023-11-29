@@ -18,7 +18,7 @@ function Grid({ yOffset = 0, interActive = false, ...props }) {
   let counter = useRef(0);
   const [hoverBlocks, setHoverBlocks] = useState([]);
   let staticBlocks = [
-    [1, 1],
+    [7, 1],
     [2, 2],
     [4, 3],
     [6, 2],

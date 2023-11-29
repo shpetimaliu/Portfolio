@@ -1,3 +1,9 @@
 @import "./style.css";
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .mask-linear-faded {
+    mask-image: linear-gradient(black, transparent 70%);
+  }
+}
