@@ -6,4 +6,23 @@
   .mask-linear-faded {
     mask-image: linear-gradient(black, transparent 70%);
   }
+
+  .mask-animationkeyboard {
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 40%,
+      black calc(60%),
+      transparent 100%
+    );
+  }
+  .mask-shortcutkeys {
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 40%,
+      black calc(60%),
+      transparent 100%
+    );
+  }
 }
