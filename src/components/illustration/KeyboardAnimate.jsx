@@ -3,13 +3,13 @@ import ButtonsHero from "../ButtonsHero";
 import Keyboard from "./Keyboard";
 
 const animates = [
-  { text: "ReactJS", keys: "S" },
-  { text: "Angular", keys: "H" },
-  { text: "NextJS", keys: "P" },
-  { text: "JavaScript", keys: "E" },
-  { text: "TypeScript", keys: "T" },
-  { text: "Framer Motion", keys: "I" },
-  { text: "gsap", keys: "M" },
+  { text: "ReactJS", keys: "s" },
+  { text: "Angular", keys: "h" },
+  { text: "NextJS", keys: "p" },
+  { text: "JavaScript", keys: "e" },
+  { text: "TypeScript", keys: "t" },
+  { text: "Framer Motion", keys: "i" },
+  { text: "gsap", keys: "m" },
 ];
 
 function KeyboardAnimate() {
@@ -30,7 +30,7 @@ function KeyboardAnimate() {
   const goToShortcut = (index) => {
     clearTimeout(timeoutRef.current);
 
-    if (!wrapperRef.current) return;
+    if (!wrapperRef.current || isNaN(index)) return;
 
     const shortcut = wrapperRef.current.querySelector(
       `button:nth-child(${index + 1})`
@@ -43,13 +43,12 @@ function KeyboardAnimate() {
     });
 
     if (!illustrationWrapperRef.current) return;
-    console.log(keys);
 
     illustrationWrapperRef.current
       .querySelectorAll(".active")
       .forEach((el) => el.classList.remove("active"));
 
-    const keys = shortcut.dataset.keys || "";
+    const keys = animates[index].keys || "";
     const keyArray = keys.split("");
     const keyElements = keyArray.map((key) =>
       illustrationWrapperRef.current?.querySelector(`[data-key="${key}"]`)
@@ -64,27 +63,32 @@ function KeyboardAnimate() {
   const goToNextShortcut = () =>
     goToShortcut((activeShortcutIndex.current + 1) % animates.length);
 
-  const onShortcutButtonClick = (ev) => {
+  const onShortcutButtonClick = (ev, keys) => {
     ev.preventDefault();
     goToShortcut(Number(ev.currentTarget.dataset.index));
   };
 
   return (
     <div>
-      <div className="mask-animationkeyboard h-full w-full">
+      <div
+        ref={illustrationWrapperRef}
+        className="mask-animationkeyboard h-full w-full"
+      >
         <Keyboard />
       </div>
-      <div className="min-h-[3rem] w-full overflow-hidden">
+      <div className="my-7 min-h-[3rem] w-full overflow-hidden">
         <div
           ref={wrapperRef}
           className="snap-x snap-mandatory mask-shortcutkeys flex min-h-[4rem] gap-2 max-w-full overflow-auto"
         >
-          {animates.map((animate) => (
+          {animates.map((animate, index) => (
             <ButtonsHero
-              className="shrink-0 snap-center "
+              className="shrink-0 snap-center first:ml-[7rem] last:mr-[7rem]"
               key={animate.text}
               onClick={(ev) => onShortcutButtonClick(ev, animate.keys)}
               variant="secondary"
+              data-index={index}
+              active={String(index === activeShortcutIndex.current)}
             >
               {animate.text}
             </ButtonsHero>

@@ -3,6 +3,17 @@
 @tailwind utilities;
 
 @layer utilities {
+  .highlighted-keys .active rect:first-child {
+    fill-opacity: 0.4;
+  }
+
+  .highlighted-keys .active rect:not(:first-child) {
+    stroke-opacity: 1;
+  }
+
+  .highlighted-keys .active path {
+    fill-opacity: 1;
+  }
   .mask-linear-faded {
     mask-image: linear-gradient(black, transparent 70%);
   }
