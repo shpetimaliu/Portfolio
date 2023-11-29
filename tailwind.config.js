@@ -19,6 +19,23 @@ module.exports = {
           { fontVariationSettings: '"width" 125' },
         ],
       },
+      keyframes: {
+        "glow-lined-vertical": {
+          "0%": { opacity: 0, transform: "translateY(0)" },
+          "5%": { opacity: 1, transform: "translateY(0)" },
+          "90%": { opacity: 1 },
+          "100%": { opacity: 0, transform: "translateY(min(21vw, 45rem))" },
+        },
+        zap: {
+          "0% 9% 11% 10%": {
+            fill: "transparent",
+          },
+          "10%": { fill: "white" },
+        },
+      },
+      animation: {
+        zap: "zap 2250ms calc(var(--index) * 20ms) linear infinite",
+      },
     },
 
     backgroundImage: {
