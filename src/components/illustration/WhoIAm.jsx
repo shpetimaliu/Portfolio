@@ -2,6 +2,7 @@
 import clsx from "clsx";
 import { useEffect, useMemo, useRef, useState } from "react";
 import Im, { Done, Exp, Experience } from "./icons/Im";
+import { Bugs, Features, Improvement } from "./icons/WhatILike";
 
 const KnowOptions = [
   {
@@ -42,14 +43,14 @@ const KnowOptions = [
   },
   {
     label: "What I like",
-    icon: Experience,
+    icon: Improvement,
     subOption: [
-      { label: "Bug, but bug fixed", icon: Experience },
-      { label: "Learning new stack", icon: Experience },
-      { label: "Training", icon: Experience },
+      { label: "Bug, but bug fixed", icon: Bugs },
+      { label: "Learning new stack", icon: Improvement },
+      { label: "Training", icon: Features },
       {
         label: "Watch Indian programmers in YT",
-        icon: Experience,
+        icon: Bugs,
       },
     ],
   },

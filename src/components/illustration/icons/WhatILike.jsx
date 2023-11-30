@@ -1,16 +1,61 @@
 import clsx from "clsx";
-import React from "react";
 
-const typeClassNames = {
-  bug: "bg-[#eb5757]",
-  feature: "bg-[#bb87fc]",
-  improvement: "bg-[#4da7fc]",
+export const Bugs = () => {
+  return (
+    <div
+      className={clsx(
+        "flex items-center justify-center rounded-full bg-[#eb5757]"
+      )}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+      >
+        <circle cx="8" cy="8" r="7" fill="#eb5757" />
+      </svg>
+    </div>
+  );
 };
 
-export const WhatILike = ({ type }) =>
-  React.createElement("div", {
-    className: clsx(
-      "flex h-[0.9rem] w-[0.9rem] items-center justify-center rounded-full",
-      typeClassNames[type]
-    ),
-  });
+export const Improvement = () => {
+  return (
+    <div
+      className={clsx(
+        "flex items-center justify-center rounded-full bg-[#4da7fc]"
+      )}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+      >
+        <circle cx="8" cy="8" r="7" fill="#4da7fc" />
+      </svg>
+    </div>
+  );
+};
+
+export const Features = () => {
+  return (
+    <div
+      className={clsx(
+        "flex items-center justify-center rounded-full bg-[#bb87fc]"
+      )}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+      >
+        <circle cx="8" cy="8" r="7" fill="#bb87fc" />
+      </svg>
+    </div>
+  );
+};
