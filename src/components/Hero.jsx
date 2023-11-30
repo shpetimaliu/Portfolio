@@ -44,7 +44,7 @@ function Hero() {
             </p>
           </div>
 
-          <div className="relative shrink-0 snap-center items-center text-center flex flex-col justify-start min-h-[32rem] w-full sm:w-full md:w-[calc(66.66%-12px)] rounded-[4.8rem] border border-transparent-white md:max-w-[calc(66.66%-12px)] bg-glass-gradient p-8 md:p-14">
+          <div className="relative flex min-h-[32rem] w-full shrink-0 snap-center flex-col items-center justify-start overflow-hidden rounded-[4.8rem] border border-transparent-white bg-glass-gradient p-8 text-center md:max-w-[calc(66.66%-12px)] md:basis-[calc(66.66%-12px)] md:p-14">
             <WhoIAm />
             <div className="[.opened+&]:opacity-0 transition-opacity ">
               <p className="text-xs">.click on the command</p>

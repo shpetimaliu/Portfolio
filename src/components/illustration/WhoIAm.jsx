@@ -105,7 +105,7 @@ function WhoIAm() {
     <div className={clsx(opened && "opened")} ref={commandMenuRef}>
       <div
         className={clsx(
-          "absolute left-[calc(50%+7.5rem)] flex w-[40vw] max-h-[30rem] max-w-[44rem] -translate-x-1/2 flex-col items-start rounded-xl border border-transparent-white bg-transparent-white shadow-[rgb(0_0_0_/_35%)_0px_7px_32px] transition-[transform,opacity] md:left-1/2 opacity-60",
+          "absolute left-[50%] transform w-[90vw] md:w-[32rem] lg:w-[32rem] max-w-[50rem] md:max-w-[70rem] -translate-x-1/2  flex flex-col items-start rounded-xl border border-transparent-white bg-transparent-white shadow-[rgb(0_0_0_/_35%)_0px_7px_32px] transition-[transform,opacity] md:left-1/2",
           opened && "opened translate-y-[-0.3rem] opacity-100",
           !opened && "translate-y-[5.5rem] opacity-50"
         )}
@@ -116,15 +116,20 @@ function WhoIAm() {
         <input
           placeholder="Type a command for search..."
           className="bg-transparent text-lg p-5 outline-none w-full"
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
         />
         <div className="w-full flex flex-col text-sm p-5 text-[#f7f8f8]">
           {currentOptions &&
             currentOptions.map(({ label, icon: Icon, subOption }, index) => (
               <button
                 key={label}
-                onClick={() => {
+                onClick={(ev) => {
                   setSelectedOption(subOption ? index : null);
-                  if (!subOption) setOpened(false);
+                  if (!subOption) {
+                    setOpened(false);
+                    ev.stopPropagation();
+                  }
                 }}
                 className="command-menu-button first:bg-white/[0.15] gap-3 items-center flex px-5 h-[3rem] hover:bg-white/[0.05] w-full"
               >
