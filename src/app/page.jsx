@@ -1,5 +1,6 @@
 "use client";
 import Container from "@/components/Container";
+import Experience from "@/components/Experience";
 import { FadeIn } from "@/components/FadeIn";
 import Quote from "@/components/Quote";
 import Skills from "@/components/Skills";
@@ -23,6 +24,9 @@ export default function Home() {
           </p>
         </FadeIn>
       </Container>
+      <div className="px-4 mb-32 pt-8 overflow-hidden">
+        <Experience />
+      </div>
       <StackTechnology />
       <Quote className="mt-24 sm:mt-32 lg:mt-40" />
       <Skills />

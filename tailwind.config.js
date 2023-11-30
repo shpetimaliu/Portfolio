@@ -50,7 +50,10 @@ module.exports = {
     },
     backgroundImage: {
       "glass-gradient":
-        "linear-gradient(112.1deg, rgb(0,2,19) 0%, rgb(16,17,39) 100%)",
+        "linear-gradient(112.1deg, rgb(0,2,19) 0%, rgb(24 ,25 ,25) 100%)",
+      "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+      "gradient-conic":
+        "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
     },
   },
   plugins: [],
