@@ -44,14 +44,16 @@ function Hero() {
             </p>
           </div>
 
-          <div className="relative shrink-0 snap-center items-center flex flex-col justify-start min-h-[32rem] w-full sm:w-full md:w-[calc(66.66%-12px)] rounded-[4.8rem] border border-transparent-white md:max-w-[calc(66.66%-12px)] bg-glass-gradient p-8 md:p-14">
-            <p className="text-3xl mb-4">ShputZzAliu</p>
-            <p className="text-md text-neutral-400">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industrys standard dummy text
-              ever since the 1500s
-            </p>
+          <div className="relative shrink-0 snap-center items-center text-center flex flex-col justify-start min-h-[32rem] w-full sm:w-full md:w-[calc(66.66%-12px)] rounded-[4.8rem] border border-transparent-white md:max-w-[calc(66.66%-12px)] bg-glass-gradient p-8 md:p-14">
             <WhoIAm />
+            <div className="[.opened+&]:opacity-0 transition-opacity ">
+              <p className="text-xs">.click on the command</p>
+              <p className="text-3xl mb-4">ShputZzAliu</p>
+              <p className="text-md text-neutral-400">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry.
+              </p>
+            </div>
           </div>
         </div>
       </div>

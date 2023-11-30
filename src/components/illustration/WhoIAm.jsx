@@ -2,7 +2,6 @@
 import clsx from "clsx";
 import { useEffect, useMemo, useRef, useState } from "react";
 import Im, { Done, Exp, Experience } from "./icons/Im";
-import { WhatILike } from "./icons/WhatILike";
 
 const KnowOptions = [
   {
@@ -14,7 +13,7 @@ const KnowOptions = [
         icon: Im,
       },
       {
-        label: "MERN Stack",
+        label: "Web Developer / IT Supporter",
         icon: Im,
       },
       {
@@ -27,7 +26,7 @@ const KnowOptions = [
     label: "Experience",
     icon: Exp,
     subOption: [
-      { label: "TheUnnix", icon: Done },
+      { label: "TheUnnix Dev", icon: Done },
       { label: "Backstage LLC", icon: Done },
     ],
   },
@@ -45,12 +44,12 @@ const KnowOptions = [
     label: "What I like",
     icon: Experience,
     subOption: [
-      { label: "Bug, but bug fixed", icon: <WhatILike type="bug" /> },
-      { label: "Learning new stack", icon: <WhatILike type="feature" /> },
-      { label: "Training", icon: <WhatILike type="improvement" /> },
+      { label: "Bug, but bug fixed", icon: Experience },
+      { label: "Learning new stack", icon: Experience },
+      { label: "Training", icon: Experience },
       {
         label: "Watch Indian programmers in YT",
-        icon: <WhatILike type="bug" />,
+        icon: Experience,
       },
     ],
   },
@@ -86,7 +85,7 @@ function WhoIAm() {
     const options =
       selectedOption === null
         ? KnowOptions
-        : KnowOptions[selectedOption].subOptions;
+        : KnowOptions[selectedOption].subOption;
 
     if (searchValue === "") return options;
 
@@ -103,31 +102,37 @@ function WhoIAm() {
   }, [selectedOption]);
 
   return (
-    <div
-      ref={commandMenuRef}
-      className={clsx(
-        "absolute left-[calc(50%+7.5rem)] flex w-[40vw] max-h-[30rem] max-w-[44rem] -translate-x-1/2 flex-col items-start rounded-xl border border-transparent-white bg-transparent-white shadow-[rgb(0_0_0_/_35%)_0px_7px_32px] transition-[transform,opacity] md:left-1/2 opacity-60",
-        opened && "opened translate-y-[-0.3rem] opacity-100",
-        !opened && "translate-y-[5.5rem] opacity-50"
-      )}
-    >
-      <span className="ml-4 mt-2 text-white/50 bg-white/[0.05] text-sm px-2 leading-10">
-        SHPETIM ALIU, KOSOVE. MITROVICE
-      </span>
-      <input
-        placeholder="Type a command for search..."
-        className="bg-transparent text-lg p-5 outline-none w-full"
-      />
-      <div className="w-full flex flex-col text-sm p-5 text-[#f7f8f8]">
-        {KnowOptions.map(({ label, icon: Icon }) => (
-          <button
-            key={label}
-            className="items-center flex px-5 h-[3rem] hover:bg-white/[0.05] w-full"
-          >
-            <Icon />
-            <span className="ml-3">{label}</span>
-          </button>
-        ))}
+    <div className={clsx(opened && "opened")} ref={commandMenuRef}>
+      <div
+        className={clsx(
+          "absolute left-[calc(50%+7.5rem)] flex w-[40vw] max-h-[30rem] max-w-[44rem] -translate-x-1/2 flex-col items-start rounded-xl border border-transparent-white bg-transparent-white shadow-[rgb(0_0_0_/_35%)_0px_7px_32px] transition-[transform,opacity] md:left-1/2 opacity-60",
+          opened && "opened translate-y-[-0.3rem] opacity-100",
+          !opened && "translate-y-[5.5rem] opacity-50"
+        )}
+      >
+        <span className="ml-4 mt-2 text-white/50 bg-white/[0.05] text-sm px-2 leading-10">
+          SHPETIM ALIU, KOSOVE. MITROVICE
+        </span>
+        <input
+          placeholder="Type a command for search..."
+          className="bg-transparent text-lg p-5 outline-none w-full"
+        />
+        <div className="w-full flex flex-col text-sm p-5 text-[#f7f8f8]">
+          {currentOptions &&
+            currentOptions.map(({ label, icon: Icon, subOption }, index) => (
+              <button
+                key={label}
+                onClick={() => {
+                  setSelectedOption(subOption ? index : null);
+                  if (!subOption) setOpened(false);
+                }}
+                className="command-menu-button first:bg-white/[0.15] gap-3 items-center flex px-5 h-[3rem] hover:bg-white/[0.05] w-full"
+              >
+                <Icon />
+                {label}
+              </button>
+            ))}
+        </div>
       </div>
     </div>
   );
