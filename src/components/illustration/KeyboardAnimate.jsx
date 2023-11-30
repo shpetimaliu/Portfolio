@@ -79,7 +79,7 @@ function KeyboardAnimate() {
       <div className="my-7 min-h-[3rem] w-full overflow-hidden">
         <div
           ref={wrapperRef}
-          className="snap-x snap-mandatory mask-shortcutkeys flex min-h-[4rem] gap-2 max-w-full overflow-auto"
+          className="mask-shortcutkeys flex h-[6rem] max-w-full snap-x snap-mandatory gap-2 overflow-auto pb-8"
         >
           {animates.map((animate, index) => (
             <ButtonsHero
@@ -90,7 +90,7 @@ function KeyboardAnimate() {
               data-index={index}
               active={String(index === activeShortcutIndex.current)}
             >
-              {animate.text}
+              <span>{animate.text}</span>
             </ButtonsHero>
           ))}
         </div>

@@ -19,6 +19,16 @@ module.exports = {
           { fontVariationSettings: '"width" 125' },
         ],
       },
+      colors: {
+        transparent: "transparent",
+        white: "#fff",
+        "off-white": "#f7f8f8",
+        "transparent-white": "rgba(255, 255, 255, 0.08)",
+        background: "#000212",
+        grey: "#858699",
+        "grey-dark": "#222326",
+        "primary-text": "#b4bcd0",
+      },
       keyframes: {
         "glow-lined-vertical": {
           "0%": { opacity: 0, transform: "translateY(0)" },
@@ -52,7 +62,7 @@ module.exports = {
       "radial-faded":
         "radial-gradient(circle at bottom center,var(--color),transparent 70%)",
       "glass-gradient":
-        "linear-gradient(112.1deg, rgb(32, 38, 57) 0%, rgb(63, 76, 119) 100%)",
+        "linear-gradient(112.1deg, rgb(0,2,19) 0%, rgb(16,17,39) 100%)",
     },
   },
   plugins: [],
