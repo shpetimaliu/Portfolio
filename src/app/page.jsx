@@ -24,7 +24,7 @@ export default function Home() {
           </p>
         </FadeIn>
       </Container>
-      <Experience />
+      <Experience className="mt-24 sm:mt-32 lg:mt-40" />
       <StackTechnology />
       <Quote className="mt-24 sm:mt-32 lg:mt-40" />
       <Skills />

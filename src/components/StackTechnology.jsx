@@ -1,5 +1,6 @@
 import Image from "next/image";
 import angular from "../images/stack/angular.svg";
+import api from "../images/stack/api.svg";
 import bootstrap from "../images/stack/bootstrap.svg";
 import cssIcon from "../images/stack/css.svg";
 import ejs from "../images/stack/ejs.svg";
@@ -37,6 +38,7 @@ const TechStacksFront = [
   ["Socket", socket],
   ["gsap", gsapIcon],
   ["framermotion", framermotion],
+  ["api", api],
   ["ejs", ejs],
   ["mustache", mustache],
   ["HTML", html],
@@ -62,7 +64,7 @@ const WebBuilders = [
 
 function StackTechnology() {
   return (
-    <div className="mt-24 bg-[#0D0F16] sm:grid-cols-5 py-20 sm:mt-32 sm:py-32 lg:mt-56">
+    <div className="bg-[#0D0F16] sm:grid-cols-5 sm:mt-22 sm:py-32">
       <Container>
         <div className="relative">
           <div className="absolute top-0 left-0 w-full h-full">

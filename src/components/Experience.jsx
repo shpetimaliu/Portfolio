@@ -3,10 +3,11 @@
 import { motion } from "framer-motion";
 import CodeEditor from "./CodeEditor";
 import Container from "./Container";
+import ConnectToStack from "./connectToStack";
 
-function Experience({ props }) {
+function Experience() {
   return (
-    <div className="mt-24 bg-[#0D0F16] sm:grid-cols-5 py-20 sm:mt-32 sm:py-32 lg:mt-56">
+    <div className="bg-[#0D0F16] py-20 sm:mt-32">
       <Container>
         <div className="max-w-[80rem] mx-auto text-white">
           <div className="flex md:pl-10 space-x-3 md:space-x-10">
@@ -64,6 +65,7 @@ function Experience({ props }) {
             </div>
           </div>
           <CodeEditor />
+          <ConnectToStack />
         </div>
       </Container>
     </div>

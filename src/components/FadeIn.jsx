@@ -27,7 +27,7 @@ export const FadeIn = (props) => {
   );
 };
 
-export const fadeInStagger = ({ faster = false, ...props }) => {
+export const FadeInStagger = ({ faster = false, ...props }) => {
   return (
     <FadeInStraggerContext value={true}>
       <motion.div

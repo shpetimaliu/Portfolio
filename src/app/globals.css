@@ -77,4 +77,8 @@
     background-color: #7ee787;
     filter: blur(20px);
   }
+
+  .custom-height {
+    height: 15rem;
+  }
 }
