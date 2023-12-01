@@ -6,10 +6,10 @@ import Project from "./projects/Project";
 
 function WorkPage() {
   const projects = [
-    { titulli: "Netflix Clone", src: "netflix.webp", color: "#8C8C8C" },
-    { titulli: "Facebook Clone", src: "facebook.webp", color: "#0000FF" },
-    { titulli: "Threads Clone", src: "threads.webp", color: "#48D7D7" },
-    { titulli: "Facebook Clone", src: "facebook.webp", color: "#81F775" },
+    { titulli: "Netflix Clone", src: "facebook.png", color: "#8C8C8C" },
+    { titulli: "Facebook Clone", src: "facebook.png", color: "#0000FF" },
+    { titulli: "Threads Clone", src: "facebook.png", color: "#48D7D7" },
+    { titulli: "Facebook Clone", src: "facebook.png", color: "#81F775" },
   ];
 
   const [modal, setModal] = useState({ active: false, index: 0 });
