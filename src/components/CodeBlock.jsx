@@ -4,21 +4,21 @@ function CodeBlock() {
       <pre className="text-white">
         <span>
           &lt;<span className="pl-ent">div</span>{" "}
-          <span className="pl-e">classNameName</span>=
+          <span className="pl-e">id</span>=
           <span className="pl-s">
-            <span className="pl-pds">&quot;</span>position-absolute width-full
-            color-bg-default<span className="pl-pds">&quot;</span>
+            <span className="pl-pds">&quot;</span>Experince
+            <span className="pl-pds">&quot;</span>
           </span>{" "}
           <span className="pl-e">style</span>=
           <span className="pl-s">
             <span className="pl-pds">&quot;</span>
             <span className="pl-s1">
               <span className="pl-c1">
-                <span className="pl-c1">bottom</span>
+                <span className="pl-c1">opacity</span>
               </span>
               :{" "}
               <span className="pl-c1">
-                -4<span className="pl-k">rem</span>
+                <span className="pl-k">1</span>
               </span>
               ;
             </span>
@@ -30,9 +30,9 @@ function CodeBlock() {
       <pre className="text-white">
         <span>
           &nbsp; &lt;<span className="pl-ent">div</span>{" "}
-          <span className="pl-e">className</span>=
+          <span className="pl-e">class</span>=
           <span className="pl-s">
-            <span className="pl-pds">&quot;</span>container-xl p-responsive
+            <span className="pl-pds">&quot;</span>work-1
             <span className="pl-pds">&quot;</span>
           </span>
           &gt;
@@ -40,11 +40,50 @@ function CodeBlock() {
       </pre>
       <pre className="text-white">
         <span>
-          &nbsp;&nbsp; &lt;<span className="pl-ent">div</span>{" "}
-          <span className="pl-e">className</span>=
+          &nbsp;&nbsp; &lt;<span className="pl-ent">span</span>{" "}
+          <span className="pl-e">company</span>=
           <span className="pl-s">
-            <span className="pl-pds">&quot;</span>d-flex flex-justify-center
-            flex-lg-justify-end color-bg-default
+            <span className="pl-pds">&quot;</span>Backstage LLC
+            <span className="pl-pds">&quot;</span>
+          </span>
+          &gt;
+        </span>
+        from 2021 to 2023
+        <span className="pl-ent">
+          <span className="text-white">&lt;</span>
+          <span className="text-white">/</span>span
+          <span className="text-white">&gt;</span>
+        </span>
+      </pre>
+      <pre className="text-white">
+        <span>
+          &nbsp;&nbsp; &lt;<span className="pl-ent">h1</span>
+          <span className="pl-pds">&gt;</span>position: Web Developer / Web
+          Design
+          <span className="pl-ent">
+            <span className="text-white">&lt;</span>
+            <span className="text-white">/</span>h1
+          </span>
+          &gt; &nbsp;&nbsp;
+        </span>
+      </pre>
+
+      <pre className="text-white">
+        <span>
+          &nbsp; &lt;
+          <span className="pl-ent">
+            <span className="text-white">/</span>div
+          </span>
+          &gt;
+        </span>
+      </pre>
+      <pre className="text-white">
+        <span>
+          &nbsp; &lt;
+          <span className="pl-ent">div</span>{" "}
+          <span className="pl-e">class</span>=
+          <span className="pl-s">
+            <span className="pl-pds">&quot;</span>work-2
             <span className="pl-pds">&quot;</span>
           </span>
           &gt;
@@ -52,85 +91,31 @@ function CodeBlock() {
       </pre>
       <pre className="text-white">
         <span>
-          &nbsp;&nbsp;&nbsp; &lt;<span className="pl-ent">div</span>{" "}
-          <span className="pl-e">className</span>=
+          &nbsp;&nbsp; &lt;<span className="pl-ent">span</span>{" "}
+          <span className="pl-e">company</span>=
           <span className="pl-s">
-            <span className="pl-pds">&quot;</span>col-8 col-sm-7 col-md-6
-            col-lg-5 position-relative z-2 right-lg-n12 events-none
+            <span className="pl-pds">&quot;</span>TheUnnix Dev
             <span className="pl-pds">&quot;</span>
           </span>
           &gt;
         </span>
-      </pre>
-      <pre className="text-white">
-        <span>
-          &nbsp;&nbsp;&nbsp;&nbsp; &lt;<span className="pl-ent">picture</span>
-          &gt;
+        from 2022 to now
+        <span className="pl-ent">
+          <span className="text-white">&lt;</span>
+          <span className="text-white">/</span>span
+          <span className="text-white">&gt;</span>
         </span>
       </pre>
       <pre className="text-white">
         <span>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;
-          <span className="pl-ent">source</span>{" "}
-          <span className="pl-e">srcset</span>=
-          <span className="pl-s">
-            <span className="pl-pds">&quot;</span>astro-mona.webp
-            <span className="pl-pds">&quot;</span>
-          </span>{" "}
-          <span className="pl-e">type</span>=
-          <span className="pl-s">
-            <span className="pl-pds">&quot;</span>image/webp
-            <span className="pl-pds">&quot;</span>
+          &nbsp;&nbsp; &lt;<span className="pl-ent">h1</span>
+          <span className="pl-pds">&gt;</span>position: Web Developer / IT
+          Supporter
+          <span className="pl-ent">
+            <span className="text-white">&lt;</span>
+            <span className="text-white">/</span>h1
           </span>
-          &gt;
-        </span>
-      </pre>
-      <pre className="text-white">
-        <span>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<span className="pl-ent">img</span>{" "}
-          <span className="pl-e">src</span>=
-          <span className="pl-s">
-            <span className="pl-pds">&quot;</span>astro-mona.svg
-            <span className="pl-pds">&quot;</span>
-          </span>{" "}
-          <span className="pl-e">width</span>=
-          <span className="pl-s">
-            <span className="pl-pds">&quot;</span>960
-            <span className="pl-pds">&quot;</span>
-          </span>{" "}
-          <span className="pl-e">height</span>=
-          <span className="pl-s">
-            <span className="pl-pds">&quot;</span>967
-            <span className="pl-pds">&quot;</span>
-          </span>{" "}
-          <span className="pl-e">className</span>=
-          <span className="pl-s">
-            <span className="pl-pds">&quot;</span>home-astro-mona width-full
-            position-absolute bottom-0 height-auto
-            <span className="pl-pds">&quot;</span>
-          </span>{" "}
-          <span className="pl-e">alt</span>=
-          <span className="pl-s">
-            <span className="pl-pds">&quot;</span>Mona looking at GitHub
-            activity across the globe<span className="pl-pds">&quot;</span>
-          </span>
-          &gt;
-        </span>
-      </pre>
-      <pre className="text-white">
-        <span>
-          &nbsp;&nbsp;&nbsp;&nbsp; &lt;/<span className="pl-ent">picture</span>
-          &gt;
-        </span>
-      </pre>
-      <pre className="text-white">
-        <span>
-          &nbsp;&nbsp;&nbsp; &lt;/<span className="pl-ent">div</span>&gt;
-        </span>
-      </pre>
-      <pre className="text-white">
-        <span>
-          &nbsp;&nbsp; &lt;/<span className="pl-ent">div</span>&gt;
+          &gt; &nbsp;&nbsp;
         </span>
       </pre>
       <pre className="text-white">

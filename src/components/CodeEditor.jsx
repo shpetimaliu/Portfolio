@@ -3,19 +3,24 @@ import CodeBlock from "./CodeBlock";
 
 function CodeEditor() {
   const anime = {
-    heqja: { opacity: 0 },
-    shfaqe: {
+    hidden: { opacity: 0 },
+    show: {
       opacity: 1,
       transition: {
-        straggerChildren: 0.1,
+        staggerChildren: 0.1,
         delayChildren: 0.1,
       },
     },
   };
 
   const items = {
-    heqja: { opacity: 0, y: 3 },
-    shfaqja: { opacity: 1, y: 0, transition: { type: "keyframe" } },
+    hidden: { opacity: 0, y: 3 },
+    show: { opacity: 1, y: 0, transition: { type: "keyframe" } },
+  };
+
+  const getCurrentDate = () => {
+    const currentDate = new Date();
+    return currentDate.toLocaleDateString();
   };
 
   return (
@@ -109,11 +114,21 @@ function CodeEditor() {
         <div className="min-w-0 w-full">
           <div className="border-b-[0.5px] border-[#30363d] text-[#7d8590]">
             <ul className="flex px-3 pt-4">
-              <li className="px-3 py-2 rounded-t-md bg-[#0d1117] text-gray-300">
+              <li className="flex items-center px-3 py-2 rounded-t-md bg-[#0d1117] text-gray-300">
                 index.html
               </li>
-              <li className="px-3 py-2">script.js</li>
-              <li className="px-3 py-2">package.json</li>
+              <li className="flex items-center px-3 py-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 630 630"
+                  className="h-4 w-4 mr-2"
+                >
+                  <rect width="630" height="630" fill="#f7df1e" />
+                  <path d="m423.2 492.19c12.69 20.72 29.2 35.95 58.4 35.95 24.53 0 40.2-12.26 40.2-29.2 0-20.3-16.1-27.49-43.1-39.3l-14.8-6.35c-42.72-18.2-71.1-41-71.1-89.2 0-44.4 33.83-78.2 86.7-78.2 37.64 0 64.7 13.1 84.2 47.4l-46.1 29.6c-10.15-18.2-21.1-25.37-38.1-25.37-17.34 0-28.33 11-28.33 25.37 0 17.76 11 24.95 36.4 35.95l14.8 6.34c50.3 21.57 78.7 43.56 78.7 93 0 53.3-41.87 82.5-98.1 82.5-54.98 0-90.5-26.2-107.88-60.54zm-209.13 5.13c9.3 16.5 17.76 30.45 38.1 30.45 19.45 0 31.72-7.61 31.72-37.2v-201.3h59.2v202.1c0 61.3-35.94 89.2-88.4 89.2-47.4 0-74.85-24.53-88.81-54.075z" />
+                </svg>
+                script.js
+              </li>
+              <li className="flex items-center px-3 py-2">package.json</li>
             </ul>
             <div className="bg-[#0d1117] p-4">
               <div className="flex">
@@ -136,14 +151,135 @@ function CodeEditor() {
               <li className="pr-3">Debug Console</li>
             </ul>
             <motion.div
-              variants={container}
+              variants={anime}
               initial="hidden"
               whileInView="show"
               viewport={{ once: false, amount: 0.5 }}
               className="overflow-hidden whitespace-nowrap font-bold text-[14px] text-[#7d8590]"
             >
-              <motion.div></motion.div>
+              <motion.div variants={items}>
+                [<span className="text-[#6D7681]">08.21.2021</span>]:
+                <span>Starting</span>
+                &nbsp;
+                <span className="text-[#3081F7]">
+                  at Backstage LLC (Prishtine)
+                </span>
+                &nbsp; after &nbsp;
+                <span className="text-[#A371F7]">247ms</span>
+              </motion.div>
+              <motion.div variants={items}>
+                [<span className="text-[#6D7681]">02.11.2023</span>]:
+                <span>Finished</span>
+                &nbsp;
+                <span className="text-[#3081F7]">
+                  at Backstage LLC (Prishtine)
+                </span>
+                &nbsp; after &nbsp;
+                <span className="text-[#A371F7]">247ms</span>
+              </motion.div>
+              <motion.div variants={items}>
+                [<span className="text-[#6D7681]">04.19.2022</span>]:
+                <span>Starting</span>
+                &nbsp;
+                <span className="text-[#3081F7]">
+                  creating TheUnnix Dev (Mitrovice)
+                </span>
+                &nbsp; after &nbsp;
+                <span className="text-[#A371F7]">347ms</span>
+              </motion.div>
+              <motion.div variants={items}>
+                [
+                <span className="text-[#6D7681]">
+                  {getCurrentDate().replace(/\//g, ".")}
+                </span>
+                ]:
+                <span>Still</span>
+                &nbsp;
+                <span className="text-[#3081F7]">&apos;Workgin good&apos;</span>
+                &nbsp; after &nbsp;
+                <span className="text-[#A371F7]">417ms</span>
+              </motion.div>
+              <motion.div variants={items}>
+                [
+                <span className="text-[#6D7681]">
+                  {getCurrentDate().replace(/\//g, ".")}
+                </span>
+                ]:
+                <span>Finished</span>
+                &nbsp;
+                <span className="text-[#3081F7]">&apos;clean-client&apos;</span>
+                &nbsp; after &nbsp;
+                <span className="text-[#A371F7]">7.33 s</span>
+              </motion.div>
+              <motion.div variants={items}>
+                [
+                <span className="text-[#6D7681]">
+                  {getCurrentDate().replace(/\//g, ".")}
+                </span>
+                ]:
+                <span>Starting</span>
+                &nbsp;
+                <span className="text-[#3081F7]">
+                  &apos;Looking for new Experience&apos;
+                </span>
+                &nbsp;...
+              </motion.div>
             </motion.div>
+          </div>
+        </div>
+        <div className="md:block hidden border-l-[0.5px] border-[#30363d] w-full">
+          <div className="flex items-center justify-between px-[16px] pt-[22px] pb-2 text-gray-100">
+            <div>
+              <svg
+                aria-hidden="true"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+                version="1.1"
+                width="16"
+                data-view-component="true"
+                className=""
+              >
+                <path d="M1 2.75A.75.75 0 0 1 1.75 2h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 2.75Zm0 5A.75.75 0 0 1 1.75 7h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 7.75ZM1.75 12h12.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5Z"></path>
+              </svg>
+            </div>
+            <div>
+              <svg
+                aria-hidden="true"
+                height="24"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+                version="1.1"
+                width="24"
+                data-view-component="true"
+                className=""
+              >
+                <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+              </svg>
+            </div>
+            <div>
+              <svg
+                aria-hidden="true"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+                version="1.1"
+                width="16"
+                data-view-component="true"
+                className=""
+              >
+                <path d="M8 16a2 2 0 0 0 1.985-1.75c.017-.137-.097-.25-.235-.25h-3.5c-.138 0-.252.113-.235.25A2 2 0 0 0 8 16ZM3 5a5 5 0 0 1 10 0v2.947c0 .05.015.098.042.139l1.703 2.555A1.519 1.519 0 0 1 13.482 13H2.518a1.516 1.516 0 0 1-1.263-2.36l1.703-2.554A.255.255 0 0 0 3 7.947Zm5-3.5A3.5 3.5 0 0 0 4.5 5v2.947c0 .346-.102.683-.294.97l-1.703 2.556a.017.017 0 0 0-.003.01l.001.006c0 .002.002.004.004.006l.006.004.007.001h10.964l.007-.001.006-.004.004-.006.001-.007a.017.017 0 0 0-.003-.01l-1.703-2.554a1.745 1.745 0 0 1-.294-.97V5A3.5 3.5 0 0 0 8 1.5Z"></path>
+              </svg>
+            </div>
+          </div>
+          <div className="px-6 flex items-center justify-between h-full bg-[#040d21]">
+            <img
+              src="https://github.githubassets.com/images/modules/site/home/globe.jpg"
+              alt="Une"
+              className="w-full h-auto md:block"
+              width="1238"
+              height="1404"
+            />
           </div>
         </div>
       </div>

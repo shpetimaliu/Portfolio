@@ -62,7 +62,7 @@ const WebBuilders = [
 
 function StackTechnology() {
   return (
-    <div className="mt-24 bg-neutral-950 sm:grid-cols-5 py-20 sm:mt-32 sm:py-32 lg:mt-56">
+    <div className="mt-24 bg-[#0D0F16] sm:grid-cols-5 py-20 sm:mt-32 sm:py-32 lg:mt-56">
       <Container>
         <div className="relative">
           <div className="absolute top-0 left-0 w-full h-full">
