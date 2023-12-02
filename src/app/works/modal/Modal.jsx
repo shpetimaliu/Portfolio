@@ -4,118 +4,110 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import "../../globals.css";
 
-const scaleAnime = {
-  initial: { scale: 0, x: "-10%", y: "-10%" },
-  open: {
+const scaleAnimation = {
+  initial: { scale: 0, x: "-50%", y: "-50%" },
+  enter: {
     scale: 1,
-    x: "-10%",
-    y: "-10%",
+    x: "-50%",
+    y: "-50%",
     transition: { duration: 0.4, ease: [0.76, 0, 0.24, 1] },
   },
   closed: {
     scale: 0,
-    x: "-10%",
-    y: "-10%",
+    x: "-50%",
+    y: "-50%",
     transition: { duration: 0.4, ease: [0.32, 0, 0.67, 0] },
   },
 };
 
-function Modal({ projects, modal }) {
+function Modal({ modal, projects }) {
   const { active, index } = modal;
-  const container = useRef(null);
+  const modalContainer = useRef(null);
   const cursor = useRef(null);
   const cursorLabel = useRef(null);
 
   useEffect(() => {
-    const moveContX = gsap.quickTo(container.current, "left", {
+    let moveContX = gsap.quickTo(modalContainer.current, "left", {
       duration: 0.8,
       ease: "power3",
     });
-    const moveContY = gsap.quickTo(container.current, "top", {
+    let moveContY = gsap.quickTo(modalContainer.current, "top", {
       duration: 0.8,
       ease: "power3",
     });
-
-    const moveCoursorX = gsap.quickTo(cursor.current, "left", {
+    let xMoveCursor = gsap.quickTo(cursor.current, "left", {
       duration: 0.5,
       ease: "power3",
     });
-
-    const moveCoursorY = gsap.quickTo(cursor.current, "top", {
+    let yMoveCursor = gsap.quickTo(cursor.current, "top", {
       duration: 0.5,
       ease: "power3",
     });
-
-    const moveCoursorLabelX = gsap.quickTo(cursorLabel.current, "left", {
+    let xMoveCursorLabel = gsap.quickTo(cursorLabel.current, "left", {
       duration: 0.45,
       ease: "power3",
     });
-
-    const moveCoursorLabelY = gsap.quickTo(cursorLabel.current, "top", {
+    let yMoveCursorLabel = gsap.quickTo(cursorLabel.current, "top", {
       duration: 0.45,
       ease: "power3",
     });
 
     window.addEventListener("mousemove", (e) => {
-      const rect = container.current.getBoundingClientRect();
-      const mouseX = e.clientX - rect.left;
-      const mouseY = e.clientY - rect.top;
-
-      moveContX(mouseX);
-      moveContY(mouseY);
-      moveCoursorLabelX(mouseX);
-      moveCoursorLabelY(mouseY);
-      moveCoursorX(mouseX);
-      moveCoursorY(mouseY);
+      const { pageX, pageY } = e;
+      moveContX(pageX);
+      moveContY(pageY);
+      xMoveCursor(pageX);
+      yMoveCursor(pageY);
+      xMoveCursorLabel(pageX);
+      yMoveCursorLabel(pageY);
     });
   }, []);
 
   return (
     <>
       <motion.div
-        ref={container}
-        variants={scaleAnime}
+        ref={modalContainer}
+        variants={scaleAnimation}
         initial="initial"
-        animate={active ? "open" : "closed"}
+        animate={active ? "enter" : "closed"} // Change "open" to "enter"
         className="h-[350px] w-[400px] overflow-hidden pointer-events-none absolute flex items-center justify-center"
-        id="container"
       >
         <div
           style={{ top: index * -100 + "%" }}
           className="h-full w-full absolute transition-top"
-          id="slider"
         >
-          {projects.map((project, index) => (
-            <div
-              key={`modal_${index}`}
-              style={{ backgroundColor: project.color }}
-              className="relative h-full group flex items-center justify-center"
-              id="modal"
-            >
-              <Image
-                src={`/images/${project.src}`}
-                alt="images"
-                width={300}
-                height={0}
-                className="group:h-auto"
-              />
-            </div>
-          ))}
+          {projects.map((project, index) => {
+            const { src, color } = project;
+            return (
+              <div
+                className="relative h-full group flex items-center justify-center"
+                style={{ backgroundColor: color }}
+                key={`modal_${index}`}
+              >
+                <Image
+                  src={`/images/${src}`}
+                  width={300}
+                  height={0}
+                  alt="image"
+                />
+              </div>
+            );
+          })}
         </div>
       </motion.div>
       <motion.div
-        variants={scaleAnime}
+        variants={scaleAnimation}
         initial="initial"
-        animate={active ? "open" : "closed"}
+        animate={active ? "enter" : "closed"}
         ref={cursor}
-        className="w-[70px] group text-white text-center h-[70px] bg-[#455CE9] absolute pointer-events-none rounded-[50%] flex items-center justify-center"
+        className="w-[70px] h-[70px] bg-[#455CE9] absolute pointer-events-none rounded-full flex items-center justify-center"
       >
         <motion.div
           ref={cursorLabel}
-          variants={scaleAnime}
+          variants={scaleAnimation}
           initial="initial"
-          animate={active ? "open" : "closed"}
-          className="bg-transparent"
+          animate={active ? "enter" : "closed"}
+          className="bg-transparent text-white"
         >
           View
         </motion.div>
