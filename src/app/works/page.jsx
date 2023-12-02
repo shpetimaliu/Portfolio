@@ -6,10 +6,30 @@ import Project from "./projects/Project";
 
 function WorkPage() {
   const projects = [
-    { titulli: "Netflix Clone", src: "facebook.png", color: "#8C8C8C" },
-    { titulli: "Facebook Clone", src: "facebook.png", color: "#0000FF" },
-    { titulli: "Threads Clone", src: "facebook.png", color: "#48D7D7" },
-    { titulli: "Facebook Clone", src: "facebook.png", color: "#81F775" },
+    {
+      titulli: "Netflix Clone",
+      src: "facebook.png",
+      color: "#8C8C8C",
+      href: "https://github.com/shpetim",
+    },
+    {
+      titulli: "Facebook Clone",
+      src: "facebook.png",
+      color: "#0000FF",
+      href: "https://github.com/2",
+    },
+    {
+      titulli: "Threads Clone",
+      src: "facebook.png",
+      color: "#48D7D7",
+      href: "https://github.com/3",
+    },
+    {
+      titulli: "Facebook Clone",
+      src: "facebook.png",
+      color: "#81F775",
+      href: "https://github.com/4",
+    },
   ];
 
   const [modal, setModal] = useState({ active: false, index: 0 });
@@ -29,6 +49,7 @@ function WorkPage() {
                 index={index}
                 setModal={setModal}
                 titulli={project.titulli}
+                href={project.href}
               />
             );
           })}

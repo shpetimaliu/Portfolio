@@ -100,14 +100,14 @@ function Modal({ modal, projects }) {
         initial="initial"
         animate={active ? "enter" : "closed"}
         ref={cursor}
-        className="w-[70px] h-[70px] bg-[#455CE9] absolute pointer-events-none rounded-full flex items-center justify-center"
+        className="w-[70px] h-[70px] text-white bg-[#455CE9] absolute pointer-events-none rounded-full flex items-center justify-center"
       >
         <motion.div
           ref={cursorLabel}
           variants={scaleAnimation}
           initial="initial"
           animate={active ? "enter" : "closed"}
-          className="bg-transparent text-white"
+          className="bg-transparent"
         >
           View
         </motion.div>
@@ -117,3 +117,5 @@ function Modal({ modal, projects }) {
 }
 
 export default Modal;
+
+// Thanks chatGPT for bug fixx 😂

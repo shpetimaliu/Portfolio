@@ -30,6 +30,10 @@ module.exports = {
         "primary-text": "#b4bcd0",
       },
       keyframes: {
+        "fade-in": {
+          from: { opacity: 0, transform: "translateY(-10px)" },
+          to: { opacity: 1, transform: "none" },
+        },
         "glow-lined-vertical": {
           "0%": { opacity: 0, transform: "translateY(0)" },
           "5%": { opacity: 1, transform: "translateY(0)" },
@@ -44,6 +48,7 @@ module.exports = {
         },
       },
       animation: {
+        "fade-in": "fade-in 1000ms var(--animation-delay, 0ms) ease forwards",
         zap: "zap 2250ms calc(var(--index) * 20ms) linear infinite",
         bounde: "240ms ease 0s 1 running bounce",
       },
@@ -54,6 +59,12 @@ module.exports = {
       "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       "gradient-conic":
         "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      "work-gradient":
+        "radial-gradient(ellipse 50% 80% at 20% 40%,rgba(93,52,221,0.1),transparent), radial-gradient(ellipse 50% 80% at 80% 50%,rgba(120,119,198,0.15),transparent)",
+      "work-glow":
+        "conic-gradient(from 230.29deg at 51.63% 52.16%, rgb(36, 0, 255) 0deg, rgb(0, 135, 255) 67.5deg, rgb(108, 39, 157) 198.75deg, rgb(24, 38, 163) 251.25deg, rgb(54, 103, 196) 301.88deg, rgb(105, 30, 255) 360deg)",
+      "works-image-gradient":
+        "radial-gradient(ellipse 50% 80% at 20% 40%,rgba(93,52,221,0.1),transparent), radial-gradient(ellipse 50% 80% at 80% 50%,rgba(120,119,198,0.15),transparent)",
     },
   },
   plugins: [],

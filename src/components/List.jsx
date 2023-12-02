@@ -1,14 +1,14 @@
 import clsx from "clsx";
 import Border from "./Border";
-import { FadeIn } from "./FadeIn";
+import { FadeIn, FadeInStagger } from "./FadeIn";
 
 function List({ className, children }) {
   return (
-    <fadeInStagger>
+    <FadeInStagger>
       <ul role="list" className={clsx("text-base text-neutral-600", className)}>
         {children}
       </ul>
-    </fadeInStagger>
+    </FadeInStagger>
   );
 }
 

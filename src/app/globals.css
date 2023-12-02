@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  margin: 0;
+}
+
 @layer utilities {
   .highlighted-keys .active rect:first-child {
     fill-opacity: 0.4;
@@ -84,5 +88,19 @@
 
   .transition-top {
     transition: top 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+
+  .brightness-60 {
+    filter: brightness(60%);
+  }
+
+  .text-gradient {
+    background: linear-gradient(
+      to right bottom,
+      rgb(0, 0, 0) 30%,
+      rgba(9, 9, 9, 0.38)
+    );
+    background-clip: text;
+    color: transparent;
   }
 }
