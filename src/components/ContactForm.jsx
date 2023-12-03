@@ -78,7 +78,7 @@ function ContactForm() {
         <div className="flex font-montserrat justify-start">
           <HCaptcha
             ref={captcha}
-            sitekey={process.env.NEXT_PUBLIC_CAPTCHA_ID}
+            sitekey={process.env.NEXT_PUBLIC_CAPTCHA_SECRET}
             onVerify={handleCaptchaVerify}
             onExpire={handleCaptchaExpire}
           />
