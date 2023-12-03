@@ -15,5 +15,9 @@ export function HeroSubtitle({ children }) {
 }
 
 export function Content({ children }) {
-  return <div className="text-center">{children}</div>;
+  return (
+    <div className="animate-fade-in mt-[-5rem] [--animation-delay:400ms] opacity-0 translate-y-[-1rem] text-lg md:text-xl mb-[4.8rem]">
+      {children}
+    </div>
+  );
 }

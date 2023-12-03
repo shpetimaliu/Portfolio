@@ -1,19 +1,25 @@
 import Image from "next/image";
+import aftereffect from "../images/stack/aftereffects.svg";
 import angular from "../images/stack/angular.svg";
 import api from "../images/stack/api.svg";
 import bootstrap from "../images/stack/bootstrap.svg";
 import cssIcon from "../images/stack/css.svg";
 import ejs from "../images/stack/ejs.svg";
 import express from "../images/stack/express.svg";
+import figma from "../images/stack/figma.svg";
 import firebase from "../images/stack/firebase.svg";
 import framermotion from "../images/stack/framermotion.svg";
 import gsapIcon from "../images/stack/gsap.svg";
 import html from "../images/stack/html.svg";
+import illustrator from "../images/stack/illustrator.svg";
+import indesign from "../images/stack/indesign.svg";
 import javascript from "../images/stack/javascript.svg";
+import lightroom from "../images/stack/lightroom.svg";
 import mongodbIcon from "../images/stack/mongodb.svg";
 import mustache from "../images/stack/mustache.svg";
 import next from "../images/stack/next.svg";
 import node from "../images/stack/node.svg";
+import photoshop from "../images/stack/photoshop.svg";
 import react from "../images/stack/react.svg";
 import redux from "../images/stack/redux.svg";
 import sass from "../images/stack/sass.svg";
@@ -62,6 +68,15 @@ const WebBuilders = [
   ["Squarespace", squarespace],
 ];
 
+const Deisgns = [
+  ["Figma", figma],
+  ["Photoshop", photoshop],
+  ["Illustrator", illustrator],
+  ["AfterEffect", aftereffect],
+  ["Indesign", indesign],
+  ["Lightroom", lightroom],
+];
+
 function StackTechnology() {
   return (
     <div className="bg-[#0D0F16] sm:grid-cols-5 sm:mt-22 sm:py-32">
@@ -77,20 +92,19 @@ function StackTechnology() {
           </h2>
           <div className="h-px flex-auto bg-neutral-800" />
         </FadeIn>
-        <fadeInStagger>
-          <ul
-            role="list"
-            className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-9"
-          >
-            {TechStacksFront.map(([TechStackFront, logo]) => (
-              <li key={TechStackFront}>
-                <FadeIn>
-                  <Image src={logo} alt={TechStackFront} unoptimized />
-                </FadeIn>
-              </li>
-            ))}
-          </ul>
-        </fadeInStagger>
+        <ul
+          role="list"
+          className="mt-10 grid grid-cols-2 md:grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-9"
+        >
+          {TechStacksFront.map(([TechStackFront, logo]) => (
+            <li key={TechStackFront}>
+              <FadeIn>
+                <Image src={logo} alt={TechStackFront} unoptimized />
+              </FadeIn>
+            </li>
+          ))}
+        </ul>
+
         <br />
         <FadeIn className="flex items-center gap-x-8">
           <h2 className="text-center font-display text-sm font-bold tracking-wider text-white sm:text-left">
@@ -98,20 +112,18 @@ function StackTechnology() {
           </h2>
           <div className="h-px flex-auto bg-neutral-800" />
         </FadeIn>
-        <fadeInStagger>
-          <ul
-            role="list"
-            className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-9"
-          >
-            {TechStacksBack.map(([TechStackBack, logo]) => (
-              <li key={TechStackBack}>
-                <FadeIn>
-                  <Image src={logo} alt={TechStackBack} unoptimized />
-                </FadeIn>
-              </li>
-            ))}
-          </ul>
-        </fadeInStagger>
+        <ul
+          role="list"
+          className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-9"
+        >
+          {TechStacksBack.map(([TechStackBack, logo]) => (
+            <li key={TechStackBack}>
+              <FadeIn>
+                <Image src={logo} alt={TechStackBack} unoptimized />
+              </FadeIn>
+            </li>
+          ))}
+        </ul>
         <br />
         <FadeIn className="flex items-center gap-x-8">
           <h2 className="text-center font-display text-sm font-bold tracking-wider text-white sm:text-left">
@@ -119,20 +131,38 @@ function StackTechnology() {
           </h2>
           <div className="h-px flex-auto bg-neutral-800" />
         </FadeIn>
-        <fadeInStagger>
-          <ul
-            role="list"
-            className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-9"
-          >
-            {WebBuilders.map(([WebBuilder, logo]) => (
-              <li key={WebBuilder}>
-                <FadeIn>
-                  <Image src={logo} alt={WebBuilder} unoptimized />
-                </FadeIn>
-              </li>
-            ))}
-          </ul>
-        </fadeInStagger>
+        <ul
+          role="list"
+          className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-9"
+        >
+          {WebBuilders.map(([WebBuilder, logo]) => (
+            <li key={WebBuilder}>
+              <FadeIn>
+                <Image src={logo} alt={WebBuilder} unoptimized />
+              </FadeIn>
+            </li>
+          ))}
+        </ul>
+        <br />
+        <FadeIn className="flex items-center gap-x-8">
+          <h2 className="text-center font-display text-sm font-bold tracking-wider text-white sm:text-left">
+            Design
+          </h2>
+          <div className="h-px flex-auto bg-neutral-800" />
+        </FadeIn>
+        <ul
+          role="list"
+          className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-9"
+        >
+          {Deisgns.map(([Deisgn, logo]) => (
+            <li key={Deisgn}>
+              <FadeIn>
+                <Image src={logo} alt={Deisgn} unoptimized />
+              </FadeIn>
+            </li>
+          ))}
+        </ul>
+        <br />
       </Container>
     </div>
   );

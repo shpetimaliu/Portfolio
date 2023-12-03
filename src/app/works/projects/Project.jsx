@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-function Project({ index, titulli, setModal, href }) {
+function Project({ index, titulli, setModal, href, position }) {
   return (
     <Link href={href} passHref legacyBehavior>
       <a
@@ -16,7 +16,7 @@ function Project({ index, titulli, setModal, href }) {
           {titulli}
         </h2>
         <p className="font-light transform translate-x-0 transition-all duration-200 ease-linear group-hover:translate-x-[10px]">
-          Test
+          {position}
         </p>
       </a>
     </Link>

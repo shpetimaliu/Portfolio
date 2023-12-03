@@ -1,4 +1,6 @@
+import emailjs from "@emailjs/browser";
 import Link from "next/link";
+import { useRef } from "react";
 import Container from "./Container";
 import { FadeIn } from "./FadeIn";
 import FooterNav from "./FooterNav";
@@ -18,9 +20,24 @@ const ArrIcon = (props) => {
 };
 
 const JustContact = () => {
+  const formJustContact = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_SERVICE_ID,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID,
+        formJustContact.current,
+        process.env.NEXT_PUBLIC_USER_ID
+      )
+      .then((result) => console.log(result.text))
+      .catch((err) => console.log("Have an error in:", err.text));
+  };
+
   return (
-    <form className="max-w-sm">
-      <h2 className="font-display text-sm font-semibold tracking-wider text-neutral-950">
+    <form className="max-w-sm" ref={formJustContact} onSubmit={sendEmail}>
+      <h2 className="font-display text-sm font-bold tracking-wider text-neutral-950">
         Contact Directly
       </h2>
       <p className="mt-4 text-sm text-neutral-700">
@@ -32,6 +49,7 @@ const JustContact = () => {
           type="text"
           placeholder="Email address or Phone Number"
           autoComplete="email"
+          name="user_email"
           aria-label="Email address or Phone Number"
           className="block w-full rounded-2xl border border-neutral-300 bg-transparent py-4 pl-6 pr-20 text-base/6 text-neutral-950 ring-4 ring-transparent transition placeholder:text-neutral-500 focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5"
         />

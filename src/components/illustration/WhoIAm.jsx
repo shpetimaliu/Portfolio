@@ -106,7 +106,7 @@ function WhoIAm() {
     <div className={clsx(opened && "opened")} ref={commandMenuRef}>
       <div
         className={clsx(
-          "absolute left-[calc(50%+7.5rem)] flex md:w-[90vw] sm:w-[90vw] w-[40vw] max-w-[44rem] -translate-x-1/2 flex-col items-start rounded-xl border border-transparent-white bg-transparent-white shadow-[rgb(0_0_0_/_35%)_0px_7px_32px] transition-[transform,opacity] md:left-1/2 translate-y-[10.8rem] opacity-100 md:translate-y-[2.4rem]",
+          "absolute left-[50%] mx-auto transform -translate-x-1/2 flex md:w-[40vw] md:h-[35vw] w-[80vw] max-h-[25rem] max-w-[44rem] flex-col items-start rounded-xl border border-transparent-white bg-transparent-white shadow-[rgb(0_0_0_/_35%)_0px_7px_32px] transition-[transform,opacity] md:left-1/2 opacity-60",
           opened && "opened translate-y-[-0.3rem] opacity-100",
           !opened && "translate-y-[5.5rem] opacity-50"
         )}

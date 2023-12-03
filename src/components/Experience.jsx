@@ -58,9 +58,10 @@ function Experience() {
                 className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-bold"
               >
                 <span className="text-[#7ee787]">
-                  Lorem ipsum text here is{" "}
+                  Profesional Experience.
+                  <br />
                 </span>
-                OpenAi is the great right now and very usefull like me
+                In this code box, I have presented the professional workspaces
               </motion.div>
             </div>
           </div>
