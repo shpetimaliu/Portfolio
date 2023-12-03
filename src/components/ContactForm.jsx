@@ -4,6 +4,7 @@ import HCaptcha from "@hcaptcha/react-hcaptcha";
 import { useRef, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/ReactToastify.min.css";
+import appConfig from "../app.config";
 import Button from "./Button";
 import { FadeIn } from "./FadeIn";
 import TextInput from "./TextInput";
@@ -78,7 +79,7 @@ function ContactForm() {
         <div className="flex font-montserrat justify-start">
           <HCaptcha
             ref={captcha}
-            sitekey={process.env.NEXT_PUBLIC_CAPTCHA_SECRET}
+            sitekey={appConfig.hCaptchaKey}
             onVerify={handleCaptchaVerify}
             onExpire={handleCaptchaExpire}
           />
