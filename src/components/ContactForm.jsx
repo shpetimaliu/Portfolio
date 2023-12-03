@@ -1,12 +1,42 @@
 "use client";
 import emailjs from "@emailjs/browser";
-import { useRef } from "react";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
+import { useRef, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/ReactToastify.min.css";
 import Button from "./Button";
 import { FadeIn } from "./FadeIn";
 import TextInput from "./TextInput";
 
 function ContactForm() {
+  const notify = () => {
+    toast.success(
+      "Thank you for reaching out! We've received your message and will be in touch shortly",
+      {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      }
+    );
+  };
+
   const formContactMe = useRef();
+  const captcha = useRef();
+  const [isCaptchaValid, setIsCaptchaValid] = useState(false);
+
+  const handleCaptchaVerify = () => {
+    setIsCaptchaValid(true);
+  };
+
+  const handleCaptchaExpire = () => {
+    setIsCaptchaValid(false);
+  };
+
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -17,7 +47,9 @@ function ContactForm() {
         formContactMe.current,
         process.env.NEXT_PUBLIC_USER_ID
       )
-      .then((result) => console.log(result.text))
+      .then(() => {
+        notify();
+      })
       .catch((err) => console.log("Have an error in:", err.text));
   };
 
@@ -43,9 +75,18 @@ function ContactForm() {
           <TextInput label="Phone" type="tel" name="phone" autoComplete="tel" />
           <TextInput label="Message" name="message" />
         </div>
-        <Button type="submit" className="mt-10">
+        <div className="flex font-montserrat justify-start">
+          <HCaptcha
+            ref={captcha}
+            sitekey={process.env.NEXT_PUBLIC_CAPTCHA_ID}
+            onVerify={handleCaptchaVerify}
+            onExpire={handleCaptchaExpire}
+          />
+        </div>
+        <Button disabled={!isCaptchaValid} type="submit" className="mt-10">
           Let’s work together
         </Button>
+        <ToastContainer position="bottom-right" newestOnTop />
       </form>
     </FadeIn>
   );
