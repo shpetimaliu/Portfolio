@@ -1,5 +1,4 @@
 import { cva } from "class-variance-authority";
-
 import Link from "next/link";
 
 export const buttonClasses = cva(

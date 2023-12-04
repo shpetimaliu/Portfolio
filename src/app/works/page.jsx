@@ -10,58 +10,58 @@ function WorkPage() {
   const projectsConceptual = [
     {
       titulli: "Netflix Clone",
-      src: "test.webp",
-      color: "#8C8C8C",
-      href: "https://github.com/shpetimaliu/netflix-app",
+      src: "netflix.png",
+      color: "#F501A3",
+      href: "/works/netflix",
       position: "Development",
     },
     {
       titulli: "Facebook Clone",
-      src: "test.webp",
-      color: "#0000FF",
-      href: "https://github.com/shpetimaliu/facebook-clone",
+      src: "facebook1.png",
+      color: "#1876F2",
+      href: "/works/facebook",
       position: "Development",
     },
     {
       titulli: "Threads Clone",
-      src: "test.webp",
-      color: "#48D7D7",
-      href: "https://github.com/shpetimaliu/threads",
+      src: "threads.png",
+      color: "#101010",
+      href: "/works/threads",
       position: "Development",
     },
     {
       titulli: "Crud App - Employee",
-      src: "test.webp",
-      color: "#81F775",
-      href: "https://github.com/shpetimaliu/CRUD-app",
+      src: "crudApp.png",
+      color: "#673AB6",
+      href: "/works/crudapp",
       position: "Design & Development",
     },
     {
       titulli: "NotesApp",
-      src: "test.webp",
+      src: "noPreview.png",
       color: "#81F775",
       href: "https://github.com/shpetimaliu/notesapp",
       position: "Development",
     },
     {
       titulli: "ShputZz Socials - (experiment social media)",
-      src: "test.webp",
+      src: "noPreview.png",
       color: "#81F775",
       href: "https://github.com/shpetimaliu/socialmedia",
       position: "Design & Development",
     },
     {
       titulli: "Workout-Tracker",
-      src: "test.webp",
-      color: "#81F775",
-      href: "https://github.com/shpetimaliu/Workout-Tracker",
+      src: "workout.png",
+      color: "#B2C29C",
+      href: "/works/workout",
       position: "Development",
     },
     {
       titulli: "Maze Game",
-      src: "test.webp",
-      color: "#81F775",
-      href: "https://github.com/shpetimaliu/maze-game",
+      src: "mazegame.png",
+      color: "#F6D358",
+      href: "/works/mazegame",
       position: "Design & Development",
     },
   ];
@@ -69,42 +69,43 @@ function WorkPage() {
   const realWordProjects = [
     {
       titulli: "TheUnnix Dev",
-      src: "test.webp",
-      color: "#48D7D7",
-      href: "https://theunnix.com/",
+      src: "theunnix.png",
+      color: "#DDE0FE",
+      href: "/works/theunnix",
       position: "Development",
     },
     {
       titulli: "London Lash Pro",
-      src: "test.webp",
+      src: "londonlash.png",
       color: "#8C8C8C",
-      href: "https://londonlashpro-ks.com",
+      href: "/works/londonlashpro",
       position: "Design & Development",
     },
     {
       titulli: "Rinesa Academy",
-      src: "test.webp",
-      color: "#0000FF",
+      src: "academy.png",
+      color: "#F2CDDF",
       href: "https://rinesalashes.academy/",
       position: "Design & Development",
     },
     {
       titulli: "Arbanika GMBH",
-      src: "test.webp",
-      color: "#81F775",
-      href: "https://arbanika.de/",
+      src: "arbanika.png",
+      color: "#8C8C8C",
+      href: "/works/arbanika",
       position: "Design & Development",
     },
     {
       titulli: "NewWay Agency",
-      src: "test.webp",
-      color: "#81F775",
+      src: "newway.png",
+      color: "#5EF9F6",
       href: "https://newway-agency.eu",
       position: "Development",
     },
   ];
 
   const [modal, setModal] = useState({ active: false, index: 0 });
+  const [modal2, setModal2] = useState({ active: false, index: 0 });
   const [hovered, setHovered] = useState();
 
   const handleMouseEnter = () => setHovered(true);
@@ -142,18 +143,18 @@ function WorkPage() {
             <h1 className="text-4xl font-bold">Conceptual Works</h1>
           </header>
           <div className="w-full flex items-center justify-center flex-col">
-            {projectsConceptual.map((project, index) => (
+            {projectsConceptual.map((projectConceptual, index2) => (
               <Project
-                key={index}
-                index={index}
-                setModal={setModal}
-                titulli={project.titulli}
-                href={project.href}
-                position={project.position}
+                key={index2}
+                index={index2}
+                setModal={setModal2}
+                titulli={projectConceptual.titulli}
+                href={projectConceptual.href}
+                position={projectConceptual.position}
               />
             ))}
           </div>
-          <Modal modal={modal} projects={projectsConceptual} />
+          <Modal modal={modal2} projects={projectsConceptual} />
 
           <motion.div
             initial={{ opacity: 0, x: 30 }}

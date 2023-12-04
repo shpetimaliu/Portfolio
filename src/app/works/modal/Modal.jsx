@@ -69,7 +69,7 @@ function Modal({ modal, projects }) {
         ref={modalContainer}
         variants={scaleAnimation}
         initial="initial"
-        animate={active ? "enter" : "closed"} // Change "open" to "enter"
+        animate={active ? "enter" : "closed"}
         className="h-[350px] w-[400px] overflow-hidden pointer-events-none absolute flex items-center justify-center"
       >
         <div

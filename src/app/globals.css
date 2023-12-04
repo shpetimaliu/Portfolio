@@ -103,4 +103,9 @@ body {
     background-clip: text;
     color: transparent;
   }
+
+  .center-horizontal {
+    display: flex;
+    align-items: center;
+  }
 }

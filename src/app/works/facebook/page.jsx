@@ -10,7 +10,7 @@ function Facebook() {
           projectStack="MERN Stack"
           projectDescription="This project, which aims to create a replica of Facebook with all the key functionalities of the Facebook platform."
           githubLink="https://github.com/shpetimaliu/facebook-clone"
-          src="/images/test.webp"
+          src="/images/facebook.png"
           textButton="Check out Code in GitHub"
         />
       </div>

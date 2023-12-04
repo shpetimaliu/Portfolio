@@ -10,7 +10,7 @@ function Netfix() {
           projectStack="React JS & Redux & Firebase"
           projectDescription="Netflix Clone is a project developed in ReactJS. This project serves as a demonstration to clone the Netflix web interface."
           githubLink="https://github.com/shpetimaliu/netflix-app"
-          src="/images/test.webp"
+          src="/images/netflix.png"
           textButton="Check out Code in GitHub"
         />
       </div>

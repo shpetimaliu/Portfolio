@@ -89,7 +89,9 @@ const Navigation = () => {
         <NavigationItem href="/about">About Me</NavigationItem>
       </NavigationRow>
       <NavigationRow>
-        <NavigationItem href="/pens">Pens</NavigationItem>
+        <NavigationItem href="https://codepen.io/shpetimaliu">
+          Pens
+        </NavigationItem>
         <NavigationItem href="/contact">Contact</NavigationItem>
       </NavigationRow>
     </nav>
@@ -125,7 +127,6 @@ const RootLayoutInner = ({ children }) => {
           aria-hidden={expanded ? "true" : undefined}
           inert={expanded ? "" : undefined}
         >
-          {/* Headeri */}
           <Header
             panelId={panelId}
             icon={HiMenuAlt4}
@@ -198,7 +199,6 @@ const RootLayoutInner = ({ children }) => {
           className="relative isolate flex w-full flex-col pt-9"
         >
           <main className="w-full flex-auto">{children}</main>
-          {/* Footeriiii */}
           <Footer />
         </motion.div>
       </motion.div>

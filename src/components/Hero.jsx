@@ -15,20 +15,25 @@ function Hero() {
             </div>
             <p className="text-3xl mb-4">WebDeveloper</p>
             <p className="text-md text-neutral-400">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industrys standard dummy text
-              ever since the 1500s
+              I&apos;m a Web Developer in MERN technologies (MongoDB,
+              Express.js, React.js, Node.js), and Full Stack. I strive to bring
+              an excellent combination of performance and user-friendliness to
+              my projects
             </p>
           </div>
           <div className="shrink-0 relative flex min-h-[32rem] w-full sm:w-full md:w-[calc(33.33%-12px)] snap-center flex-col items-center justify-end overflow-hidden rounded-[4.8rem] border border-transparent-white bg-glass-gradient p-8 md:p-14">
             <div className="mask-linear-faded items-center absolute top-[-5.2rem]">
               <ZapIllustration />
             </div>
-            <p className="text-3xl mb-4">AliuShpetim</p>
+            <p className="text-3xl mb-4">CyberSecurity</p>
             <p className="text-md text-neutral-400">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industrys standard dummy text
-              ever since the 1500s
+              On the security side, I use a suite of tools to ensure and monitor
+              the integrity of our network and applications. These tools include
+              Nmap for network scanning, Wireshark for traffic analysis, Burp
+              Suite for testing web application security, and Nikto for
+              identifying potential vulnerabilities. This suite of security
+              tools plays a crucial role in our strategy to protect and assess
+              the security of our systems and data.
             </p>
           </div>
 
@@ -36,11 +41,10 @@ function Hero() {
             <div className="absolute pointer-events-none top-[-8rem] w-full flex items-center justify-center">
               <Design />
             </div>
-            <p className="text-3xl mb-4">ShputZzAliu</p>
+            <p className="text-3xl mb-4">Design</p>
             <p className="text-md text-neutral-400">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industrys standard dummy text
-              ever since the 1500s
+              Creating user-friendly and visually appealing experiences. I blend
+              aesthetics with functionality to exceed user expectations.
             </p>
           </div>
 
@@ -48,11 +52,7 @@ function Hero() {
             <WhoIAm />
             <div className="[.opened+&]:opacity-0 transition-opacity ">
               <p className="text-xs">.click on the command</p>
-              <p className="text-3xl mb-4">ShputZzAliu</p>
-              <p className="text-md text-neutral-400">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.
-              </p>
+              <p className="text-3xl mb-4">Who I&apos;m</p>
             </div>
           </div>
         </div>
