@@ -1,3 +1,4 @@
+import Exp from "@/components/Exp";
 import Intro from "@/components/Intro";
 
 function AboutPage() {
@@ -26,7 +27,9 @@ function AboutPage() {
             and achieve significant success in my career.
           </p>
         </div>
+        <br />
       </Intro>
+      <Exp />
     </>
   );
 }
