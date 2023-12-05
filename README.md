@@ -1761,23 +1761,6 @@ The `label` element is associated with the input field and animates/transforms b
 <TextInput label="Email" className="my-custom-input" />
 ```
 
-- **@emailjs/browser**: Simplifies email sending from the client side.
-- **@fortawesome/fontawesome-free**: Provides a collection of scalable vector icons.
-- **@hcaptcha/react-hcaptcha**: Integrates hCaptcha, a privacy-focused alternative to reCAPTCHA.
-- **axios**: Facilitates HTTP requests for data fetching.
-- **class-variance-authority**: A library for handling class variance and authority in your application.
-- **clsx**: Enables conditional class names for React components.
-- **framer-motion**: Adds animation capabilities to components.
-- **gsap**: GreenSock Animation Platform for creating high-performance animations.
-- **locomotive-scroll**: Implements smooth scrolling for a polished user experience.
-- **next**: The core Next.js framework, version 14.0.3.
-- **postcss-preset-env**: Provides modern CSS features using PostCSS.
-- **react**: The core React library.
-- **react-dom**: React's package for DOM rendering.
-- **react-fast-marquee**: Enables fast and customizable marquee effects.
-- **react-icons**: A comprehensive collection of React icons.
-- **react-intersection-observer**: Monitors elements entering or exiting the viewport.
-- **react-toastify**: Displays non-intrusive notifications to users.
 
 ## Contribution Guidelines:
 
